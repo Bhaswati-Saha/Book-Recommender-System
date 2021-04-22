@@ -16,8 +16,8 @@ def recommend_book(book_name):
     distances, suggestions = model.kneighbors(book_pivot.iloc[book_id, :].values.reshape(1, -1), n_neighbors=6)
 
     x = []
-    for i in range(len(suggestions)):
-        for j in book_pivot.index[suggestions[i]]:
+
+    for j in book_pivot.index[suggestions[0]]:
             x.append(j)
     y=[]
     for i in range(1, len(x)):

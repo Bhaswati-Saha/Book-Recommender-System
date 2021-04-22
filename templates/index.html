@@ -46,17 +46,19 @@
 
      </form><br>
 
-      {% if response == 'Book not found' %}
-        <h2 style="color:#800000">Book not found</h2>
-
-      {% else %}
-        <div class="top">
+      {% if response %}
+        {% if response == 'Book not found' %}
+          <h2 style="color:#800000">Book not found</h2>
+        {% else %}
+          <div class="top">
             <h2 style="color:white">Top 5 Books</h2><br>
             {% for i in response %}
                <h3>{{i}}</h3>
             {% endfor %}
-        </div>
+          </div>
+        {% endif %}
       {% endif %}
+
 
 
 </body>
