@@ -45,16 +45,19 @@
          <button type="submit" value="Search"><b>Search</b></button>
 
      </form><br>
-      <div class="top">
-          {% if response[0] == 'Book not found' %}
-            <h2 style="color:#CC0000">Book not found</h2>
-          {% else %}
+
+      {% if response == 'Book not found' %}
+        <h2 style="color:#800000">Book not found</h2>
+
+      {% else %}
+        <div class="top">
             <h2 style="color:white">Top 5 Books</h2><br>
             {% for i in response %}
-              <h3>{{i}}</h3>
+               <h3>{{i}}</h3>
             {% endfor %}
-          {% endif %}
-      </div>
+        </div>
+      {% endif %}
+
 
 </body>
 </html>
