@@ -12,13 +12,13 @@ def index():
 
 @app.route('/recommend', methods=['post'])
 def predict():
-    book_name=request.form.get('title')
+    book_name = request.form.get('title')
     if book_name not in recommendation.book_pivot.index:
         response = ['Book not found']
     else:
         response = recommendation.recommend_book(book_name)
 
-    return render_template("index.html",response=response)
+    return render_template("index.html", response=response)
 
 
 if __name__ == "__main__":
